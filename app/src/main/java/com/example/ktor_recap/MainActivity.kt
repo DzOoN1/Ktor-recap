@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.ktor_recap.customUI.HelloScreen
 import com.example.ktor_recap.customUI.MainScreen
+import com.example.ktor_recap.navigation.myNavigation
 import com.example.ktor_recap.ui.theme.KtorrecapTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             KtorrecapTheme {
-                MainScreen()
+                myNavigation()
             }
         }
     }

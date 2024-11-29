@@ -56,4 +56,26 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    val nav_version = "2.8.4"
+    val lifecycle_version = "2.8.7"
+    val arch_version = "2.2.0"
+
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    // ViewModel
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // ViewModel utilities for Compose
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+    // LiveData
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    // Lifecycle utilities for Compose
+    implementation ("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
+
+    // Saved state module for ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+
+    // Annotation processor
+  //  kapt ("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+
 }

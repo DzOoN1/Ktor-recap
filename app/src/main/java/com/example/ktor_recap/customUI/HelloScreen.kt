@@ -16,10 +16,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.ktor_recap.R
 
 @Composable
-fun HelloScreen() {
+fun HelloScreen(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -34,7 +35,9 @@ fun HelloScreen() {
             contentDescription = "Ktor logo"
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = {}) {
+        Button(onClick = {
+            navController.navigate("MainScreen")
+        }) {
             Text(text = "Next Page",
                 fontSize = 18.sp)
         }
