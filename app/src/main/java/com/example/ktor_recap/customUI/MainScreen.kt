@@ -13,9 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.node.ModifierNodeElement
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewModelScope
+import com.example.ktor_recap.myVM.customViewModel
+import kotlinx.coroutines.launch
 
 @Composable
-fun MainScreen() {
+fun MainScreen(viewModel: customViewModel) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -23,19 +26,24 @@ fun MainScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "AAAA",
+            text = viewModel.noteId.toString(),
             fontSize = 30.sp
         )
         Text(
-            text = "BBBB",
+            text = viewModel.noteTitle,
             fontSize = 30.sp
         )
         Text(
-            text = "CCCC",
+            text = viewModel.noteNumberOfPages.toString(),
             fontSize =30.sp
         )
         Spacer(modifier = Modifier.height(30.dp))
-        Button(onClick = {}) {
+        Button(onClick = {
+            viewModel.viewModelScope.launch {
+               val text = viewModel.getHelloWorld()
+
+            }
+        }) {
             Text(text = "Pull from Ktor",
                 fontSize = 20.sp)
         }
