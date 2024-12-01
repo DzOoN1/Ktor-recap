@@ -41,6 +41,7 @@ fun MainScreen(viewModel: customViewModel) {
         Button(onClick = {
             viewModel.viewModelScope.launch {
                val text = viewModel.getHelloWorld()
+                viewModel.getAllNotes()
 
             }
         }) {

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization") version "2.1.0"
 }
 
 android {
@@ -79,7 +80,17 @@ dependencies {
     //  kapt ("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
 
     val ktor_version = "3.0.1"
-    implementation("io.ktor:ktor-client-core:$ktor_version")
-    implementation("io.ktor:ktor-client-cio:$ktor_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.ktor.client.serialization)
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.server.content.negotiation)
+    dependencies {
+        implementation(libs.ktor.client.core.v230) // Ktor client
+        implementation(libs.ktor.client.json) // JSON support
+        implementation(libs.ktor.client.serialization.v230) // Serialization
+        implementation(libs.kotlinx.serialization.json.v150) // Kotlin serialization
+    }
+
 }
