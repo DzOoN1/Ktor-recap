@@ -40,8 +40,9 @@ fun MainScreen(viewModel: customViewModel) {
         Spacer(modifier = Modifier.height(30.dp))
         Button(onClick = {
             viewModel.viewModelScope.launch {
-               val text = viewModel.getHelloWorld()
-                viewModel.getAllNotes()
+             //  val text = viewModel.getHelloWorld()
+              //  viewModel.getAllNotes()
+                viewModel.getRandomNote()
 
             }
         }) {

@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    kotlin("plugin.serialization") version "2.1.0"
+    alias(libs.plugins.kotlin.serialization)
+
 }
 
 android {
@@ -86,11 +87,8 @@ dependencies {
     implementation(libs.ktor.client.serialization)
     implementation(libs.ktor.client.android)
     implementation(libs.ktor.server.content.negotiation)
-    dependencies {
-        implementation(libs.ktor.client.core.v230) // Ktor client
-        implementation(libs.ktor.client.json) // JSON support
-        implementation(libs.ktor.client.serialization.v230) // Serialization
-        implementation(libs.kotlinx.serialization.json.v150) // Kotlin serialization
-    }
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+
 
 }
