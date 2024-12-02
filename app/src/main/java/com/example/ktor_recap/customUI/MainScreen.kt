@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,11 +15,13 @@ import androidx.compose.ui.node.ModifierNodeElement
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavController
+import com.example.ktor_recap.customClasses.Note
 import com.example.ktor_recap.myVM.customViewModel
 import kotlinx.coroutines.launch
 
 @Composable
-fun MainScreen(viewModel: customViewModel) {
+fun MainScreen(viewModel: customViewModel, navController: NavController) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -46,10 +49,27 @@ fun MainScreen(viewModel: customViewModel) {
 
             }
         }) {
-            Text(text = "Pull from Ktor",
+            Text(text = "Random Pull from Ktor",
                 fontSize = 20.sp)
         }
 
 
     }
+    Column(
+        modifier = Modifier.fillMaxSize().padding(40.dp),
+
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.End
+    ) {
+        Button(onClick = {
+            viewModel.viewModelScope.launch {
+                viewModel.getAllNotes()
+            }
+            navController.navigate("AllNotes")
+        }) {
+            Text(text = "All Notes")
+        }
+    }
 }
+
+

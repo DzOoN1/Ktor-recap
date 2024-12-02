@@ -36,23 +36,21 @@ class customViewModel : ViewModel() {
         client.close()
     }
 
-    suspend fun getRandomNote(){
-        val client = HttpClient(CIO){
-            install(ContentNegotiation){
-                json(Json{
+    suspend fun getRandomNote() {
+        val client = HttpClient(CIO) {
+            install(ContentNegotiation) {
+                json(Json {
                     prettyPrint = true
                     isLenient = true
                     ignoreUnknownKeys = true
                 })
             }
-
-
         }
-        var random = Random.nextInt(1,10)
+        var random = Random.nextInt(1, 10)
         val clientR = client.get("http://10.0.2.2:8080/$random").body<Note>()
-            noteId = clientR.id
-            noteTitle = clientR.title
-            noteNumberOfPages = clientR.numberOfPages
+        noteId = clientR.id
+        noteTitle = clientR.title
+        noteNumberOfPages = clientR.numberOfPages
 
         client.close()
     }
@@ -70,7 +68,6 @@ class customViewModel : ViewModel() {
 
         }
         listAllNotes = client.get("http://10.0.2.2:8080/notes").body()
-        Log.d("TAG", "getAllNotes:$listAllNotes ")
 
         client.close()
 
