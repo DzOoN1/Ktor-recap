@@ -17,14 +17,17 @@ import com.example.ktor_recap.customUI.MainScreen
 import com.example.ktor_recap.myVM.customViewModel
 import com.example.ktor_recap.navigation.myNavigation
 import com.example.ktor_recap.ui.theme.KtorrecapTheme
+import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.core.context.KoinContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val viewModel = ViewModelProvider(this)[customViewModel::class.java]
+        val viewModel = getViewModel<customViewModel> ()
         enableEdgeToEdge()
         setContent {
             KtorrecapTheme {
+
                 myNavigation(viewModel)
             }
         }

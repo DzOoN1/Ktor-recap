@@ -90,5 +90,17 @@ dependencies {
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
 
+    implementation (libs.koin.android)
+    implementation (libs.koin.androidx.navigation)
+    implementation (libs.koin.androidx.compose)
+    testImplementation (libs.koin.test.junit4)
+
+    // Retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.moshi)
+    implementation (libs.okhttp)
+
+    implementation (libs.androidx.lifecycle.lifecycle.viewmodel.compose)
+
 
 }

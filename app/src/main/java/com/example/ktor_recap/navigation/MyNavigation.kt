@@ -11,7 +11,7 @@ import com.example.ktor_recap.customUI.MainScreen
 import com.example.ktor_recap.myVM.customViewModel
 
 @Composable
-fun myNavigation(viewModel: customViewModel) {
+fun myNavigation(viewModel: customViewModel ) {
     val navControler = rememberNavController()
     NavHost(navControler, startDestination = "HelloScreen", builder = {
         composable("HelloScreen") { HelloScreen(navControler) }

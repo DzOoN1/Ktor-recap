@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -25,20 +26,23 @@ import com.example.ktor_recap.customClasses.Note
 import com.example.ktor_recap.myVM.customViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.core.context.KoinContext
 
 @Composable
-fun AllNotes(viewModel: customViewModel) {
-    val listNotes = viewModel.listAllNotes
+ fun AllNotes(viewModel: customViewModel ) {
+        val listNotes = viewModel.listAllNotes
 
-    LazyColumn(
-        content = {
-            itemsIndexed(listNotes) { index, item ->
-                OneItem(item)
-                Spacer(modifier = Modifier.height(15.dp))
-            }
-        }, modifier = Modifier.background(Color.Black).padding(15.dp)
-    )
-}
+        LazyColumn(
+            content = {
+                itemsIndexed(listNotes) { index, item ->
+                    OneItem(item)
+                    Spacer(modifier = Modifier.height(15.dp))
+                }
+            }, modifier = Modifier.background(Color.Black).padding(15.dp)
+        )
+    }
+
+
 
 @Composable
 fun OneItem(item: Note) {
