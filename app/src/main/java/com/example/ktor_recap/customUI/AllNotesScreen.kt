@@ -30,7 +30,7 @@ import org.koin.core.context.KoinContext
 
 @Composable
  fun AllNotes(viewModel: customViewModel ) {
-        val listNotes = viewModel.listAllNotes
+        val listNotes = viewModel.listAllNotesVM
 
         LazyColumn(
             content = {

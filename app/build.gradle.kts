@@ -94,6 +94,8 @@ dependencies {
     implementation (libs.koin.androidx.navigation)
     implementation (libs.koin.androidx.compose)
     testImplementation (libs.koin.test.junit4)
+    testImplementation(libs.junit)
+    testImplementation(libs.koin.test.junit4.v330)
 
     // Retrofit
     implementation (libs.retrofit)

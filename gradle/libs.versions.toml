@@ -1,10 +1,11 @@
 [versions]
 agp = "8.7.3"
 converterMoshi = "2.9.0"
-koinAndroid = "3.2.0-beta-1"
+koinAndroid = "3.2.0"
 koinAndroidxCompose = "3.2.0-beta-1"
 koinAndroidxNavigation = "3.2.0-beta-1"
-koinTestJunit4 = "3.2.0-beta-1"
+koinTestJunit4 = "3.3.0"
+koinTestJunit4Version = "3.3.0"
 kotlin = "2.1.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -48,6 +49,7 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndr
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinAndroidxCompose" }
 koin-androidx-navigation = { module = "io.insert-koin:koin-androidx-navigation", version.ref = "koinAndroidxNavigation" }
 koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinTestJunit4" }
+koin-test-junit4-v330 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinTestJunit4Version" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 kotlinx-serialization-json-v150 = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJsonVersion" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroid" }
