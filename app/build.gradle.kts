@@ -51,11 +51,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.compose.ui.test.junit4.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -93,9 +93,16 @@ dependencies {
     implementation (libs.koin.android)
     implementation (libs.koin.androidx.navigation)
     implementation (libs.koin.androidx.compose)
-    testImplementation (libs.koin.test.junit4)
     testImplementation(libs.junit)
-    testImplementation(libs.koin.test.junit4.v330)
+
+    //Mock
+    // Optional -- Mockito framework
+    testImplementation (libs.mockito.core)
+    testImplementation (libs.mockito.inline)
+    // Optional -- mockito-kotlin
+    androidTestImplementation (libs.mockito.kotlin)
+    // Optional -- Mockk framework
+  //  testImplementation "io.mockk:mockk:$mockkVersion"
 
     // Retrofit
     implementation (libs.retrofit)
@@ -103,6 +110,7 @@ dependencies {
     implementation (libs.okhttp)
 
     implementation (libs.androidx.lifecycle.lifecycle.viewmodel.compose)
+    androidTestImplementation (libs.androidx.navigation.testing)
 
 
 }
