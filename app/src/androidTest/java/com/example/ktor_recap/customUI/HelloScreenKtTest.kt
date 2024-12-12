@@ -31,9 +31,8 @@ class HelloScreenKtTest {
     lateinit var navController: TestNavHostController
 
     @Before
-    fun setUpNavHost(){
+    fun setUpNavHost() {
         composeTestRule.setContent {
-
             navController = TestNavHostController(LocalContext.current)
             navController.navigatorProvider.addNavigator(ComposeNavigator())
             NavHost(navController, startDestination = "HelloScreen") {
@@ -42,25 +41,18 @@ class HelloScreenKtTest {
             }
         }
     }
-
-
     @Test
-    fun screen_look() {
+    fun screen_look_helloscreen() {
         composeTestRule.onNodeWithText("Next Page").assertIsDisplayed()
         composeTestRule.onNodeWithContentDescription("Ktor logo").assertIsDisplayed()
         composeTestRule.onNodeWithText("Welcome to Ktor client app").assertIsDisplayed()
     }
-
-
     @Test
-    fun button_click(){
+    fun button_click_navigate_to_mainScreen() {
 
-            composeTestRule.onNodeWithText("Next Page").performClick()
-            val route = navController.currentBackStackEntry?.destination?.route
-            Assert.assertEquals(route, "MainScreen")
-
-
-
+        composeTestRule.onNodeWithText("Next Page").performClick()
+        val route = navController.currentBackStackEntry?.destination?.route
+        Assert.assertEquals(route, "MainScreen")
     }
 }
 

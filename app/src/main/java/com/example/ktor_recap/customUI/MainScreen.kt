@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.node.ModifierNodeElement
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewModelScope
@@ -30,15 +32,19 @@ fun MainScreen(viewModel: customViewModel, navController: NavController) {
     ) {
         Text(
             text = viewModel.noteId.toString(),
-            fontSize = 30.sp
+            fontSize = 30.sp,
+            modifier = Modifier.testTag("noteId")
+
         )
         Text(
             text = viewModel.noteTitle,
-            fontSize = 30.sp
+            fontSize = 30.sp,
+            modifier = Modifier.testTag("noteTitle")
         )
         Text(
             text = viewModel.noteNumberOfPages.toString(),
-            fontSize =30.sp
+            fontSize =30.sp,
+            modifier = Modifier.testTag("noteNumberOfPages")
         )
         Spacer(modifier = Modifier.height(30.dp))
         Button(onClick = {

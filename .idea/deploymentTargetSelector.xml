@@ -11,13 +11,13 @@
       <SelectionState runConfigName="screen_look()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="useAppContext()">
+      <SelectionState runConfigName="MainScreenKtTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="ExampleInstrumentedTest">
+      <SelectionState runConfigName="screen_look_mainscreen()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="button_click()">
+      <SelectionState runConfigName="click_random_pull_from_ktor()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
